@@ -8,6 +8,7 @@ pyodbc==5.2.0
 Requests==2.32.3
 strawberry-graphql[cli]
 uvicorn==0.34.2
+psutil==5.9.8
 
 # Testing dependencies
 pytest==8.3.4
