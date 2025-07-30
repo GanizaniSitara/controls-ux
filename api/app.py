@@ -497,9 +497,9 @@ def scan_evidence(evidence_path: str = None, bucket_hours: int = 2):
         if not evidence_path:
             # Try to find evidence folder relative to API directory
             possible_paths = [
+                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),  # Primary work environment path
                 os.path.join(API_DIR, "..", "evidence"),
                 os.path.join(API_DIR, "..", "..", "evidence"),
-                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),  # For work environment
                 "C:/evidence",  # Windows path
                 "/mnt/c/evidence"  # WSL path
             ]
@@ -543,9 +543,9 @@ def list_evidence_folders():
         
         if not evidence_path:
             possible_paths = [
+                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),  # Primary work environment path
                 os.path.join(API_DIR, "..", "evidence"),
                 os.path.join(API_DIR, "..", "..", "evidence"),
-                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),
                 "C:/evidence",
                 "/mnt/c/evidence"
             ]
@@ -601,9 +601,9 @@ def serve_evidence_report(folder_name: str):
         
         if not evidence_path:
             possible_paths = [
+                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),  # Primary work environment path
                 os.path.join(API_DIR, "..", "evidence"),
                 os.path.join(API_DIR, "..", "..", "evidence"),
-                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),
                 "C:/evidence",
                 "/mnt/c/evidence"
             ]
