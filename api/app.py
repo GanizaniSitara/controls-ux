@@ -13,7 +13,7 @@ from typing import Any
 
 # Local imports
 from data_schema import schema
-from data_aggregator import get_aggregated_data, start_scheduler, shutdown_scheduler, get_cache_health, PROVIDER_CONFIGS, API_DIR # Make sure get_aggregated_data is imported
+from data_aggregator import get_aggregated_data, get_cache_health, PROVIDER_CONFIGS, API_DIR
 from data_reader import get_application_details
 from evidence_scanner import EvidenceScanner
 from control_discovery import get_control_discovery
@@ -65,17 +65,15 @@ def clean_for_json(obj: Any) -> Any:
         return clean_for_json(obj.to_dict())
     return obj
 
-# --- Application Lifecycle (Scheduler Start/Stop & DB Creation) ---
+# --- Application Lifecycle ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Application startup: Initializing...")
-    # Start the data aggregation scheduler
-    logger.info("Starting data aggregation scheduler...")
-    start_scheduler()
+    logger.info("Application startup: Initializing Control-UX...")
+    # Control-UX doesn't use the old fitness functions scheduler
+    # Evidence scanning is done on-demand via API endpoints
+    logger.info("Control-UX ready to scan evidence folders")
     yield # Application runs here
-    logger.info("Application shutdown: Stopping data aggregation scheduler...")
-    shutdown_scheduler()
-    logger.info("Scheduler stopped.")
+    logger.info("Application shutdown: Control-UX shutting down...")
 
 # --- FastAPI App Creation ---
 # Pass the lifespan manager to the FastAPI app
@@ -98,7 +96,17 @@ app.include_router(graphql_app, prefix="/graphql")
 @app.get("/")
 def read_root():
     logger.info("Root endpoint accessed.")
-    return {"message": "Control-UX API is running. Visit /graphql for the GraphQL interface."}
+    return {
+        "message": "Control-UX API is running",
+        "endpoints": {
+            "evidence_scan": "POST /api/evidence/scan - Scan evidence folders",
+            "evidence_folders": "GET /api/evidence-folders - List all evidence folders",
+            "evidence_latest": "GET /api/evidence/latest - Get latest analysis",
+            "evidence_report": "GET /evidence/{folder_name}/Evidence_report.html - View evidence report",
+            "control_scripts": "GET /api/control-scripts - List discovered control scripts"
+        },
+        "status": "ready"
+    }
 
 # New endpoint to inspect the cache directly
 @app.get("/api/cache-debug")
@@ -482,25 +490,30 @@ def scan_evidence(evidence_path: str = None, bucket_hours: int = 2):
     logger.info(f"==> Scanning evidence folders: path={evidence_path}, bucket_hours={bucket_hours}")
     
     try:
-        # Use provided path or default to a common evidence location
+        # Use provided path or check environment variable first
+        if not evidence_path:
+            evidence_path = os.environ.get('CONTROL_UX_EVIDENCE_PATH')
+            
         if not evidence_path:
             # Try to find evidence folder relative to API directory
             possible_paths = [
                 os.path.join(API_DIR, "..", "evidence"),
                 os.path.join(API_DIR, "..", "..", "evidence"),
-                "C:/evidence",  # Windows path from screenshot
+                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),  # For work environment
+                "C:/evidence",  # Windows path
                 "/mnt/c/evidence"  # WSL path
             ]
             
             for path in possible_paths:
                 if os.path.exists(path):
                     evidence_path = path
+                    logger.info(f"Found evidence folder at: {evidence_path}")
                     break
             
             if not evidence_path:
                 raise HTTPException(
                     status_code=400, 
-                    detail="No evidence path provided and could not find default evidence folder"
+                    detail="No evidence path provided and could not find default evidence folder. Set CONTROL_UX_EVIDENCE_PATH environment variable or provide evidence_path parameter."
                 )
         
         # Create scanner and run analysis
@@ -526,18 +539,21 @@ def list_evidence_folders():
     
     try:
         # Find evidence folder path
-        evidence_path = None
-        possible_paths = [
-            os.path.join(API_DIR, "..", "evidence"),
-            os.path.join(API_DIR, "..", "..", "evidence"),
-            "C:/evidence",
-            "/mnt/c/evidence"
-        ]
+        evidence_path = os.environ.get('CONTROL_UX_EVIDENCE_PATH')
         
-        for path in possible_paths:
-            if os.path.exists(path):
-                evidence_path = path
-                break
+        if not evidence_path:
+            possible_paths = [
+                os.path.join(API_DIR, "..", "evidence"),
+                os.path.join(API_DIR, "..", "..", "evidence"),
+                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),
+                "C:/evidence",
+                "/mnt/c/evidence"
+            ]
+            
+            for path in possible_paths:
+                if os.path.exists(path):
+                    evidence_path = path
+                    break
         
         if not evidence_path:
             logger.warning("Evidence folder not found")
@@ -581,18 +597,21 @@ def serve_evidence_report(folder_name: str):
     
     try:
         # Find evidence folder path
-        evidence_path = None
-        possible_paths = [
-            os.path.join(API_DIR, "..", "evidence"),
-            os.path.join(API_DIR, "..", "..", "evidence"),
-            "C:/evidence",
-            "/mnt/c/evidence"
-        ]
+        evidence_path = os.environ.get('CONTROL_UX_EVIDENCE_PATH')
         
-        for path in possible_paths:
-            if os.path.exists(path):
-                evidence_path = path
-                break
+        if not evidence_path:
+            possible_paths = [
+                os.path.join(API_DIR, "..", "evidence"),
+                os.path.join(API_DIR, "..", "..", "evidence"),
+                os.path.join(API_DIR, "..", "..", "scripts", "evidence"),
+                "C:/evidence",
+                "/mnt/c/evidence"
+            ]
+            
+            for path in possible_paths:
+                if os.path.exists(path):
+                    evidence_path = path
+                    break
         
         if not evidence_path:
             raise HTTPException(status_code=404, detail="Evidence folder not found")
