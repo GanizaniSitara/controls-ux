@@ -1,0 +1,1 @@
+SELECT * FROM hypercube_data WHERE date = '2025-07-22';

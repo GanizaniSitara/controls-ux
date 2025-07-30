@@ -1,0 +1,31 @@
+[
+  { "applicationId": "app1", "controlAreaId": "ca1", "status": "healthy", "details": { "coverage": 95, "complexity": "low" } },
+  { "applicationId": "app1", "controlAreaId": "ca2", "status": "healthy", "details": { "vulnerabilities": 2, "scaStatus": "pass" } },
+  { "applicationId": "app1", "controlAreaId": "ca3", "status": "warning", "details": { "uptime": 99.90, "avgResponse": "250ms" } },
+  { "applicationId": "app1", "controlAreaId": "ca4", "status": "healthy", "details": { "budgetVariance": "-5%" } },
+  { "applicationId": "app1", "controlAreaId": "ca5", "status": "healthy", "details": { "lastUpdated": "2025-04-15" } },
+
+  { "applicationId": "app2", "controlAreaId": "ca1", "status": "warning", "details": { "coverage": 70, "complexity": "high" } },
+  { "applicationId": "app2", "controlAreaId": "ca2", "status": "healthy", "details": { "vulnerabilities": 5, "scaStatus": "pass" } },
+  { "applicationId": "app2", "controlAreaId": "ca3", "status": "healthy", "details": { "uptime": 99.99, "avgResponse": "150ms" } },
+  { "applicationId": "app2", "controlAreaId": "ca4", "status": "critical", "details": { "budgetVariance": "+25%" } },
+  { "applicationId": "app2", "controlAreaId": "ca5", "status": "warning", "details": { "lastUpdated": "2025-01-10" } },
+
+  { "applicationId": "app3", "controlAreaId": "ca1", "status": "healthy", "details": { "coverage": 88, "complexity": "medium" } },
+  { "applicationId": "app3", "controlAreaId": "ca2", "status": "warning", "details": { "vulnerabilities": 15, "scaStatus": "fail" } },
+  { "applicationId": "app3", "controlAreaId": "ca3", "status": "healthy", "details": { "uptime": 99.95, "avgResponse": "300ms" } },
+  { "applicationId": "app3", "controlAreaId": "ca4", "status": "healthy", "details": { "budgetVariance": "0%" } },
+  { "applicationId": "app3", "controlAreaId": "ca5", "status": "healthy", "details": { "lastUpdated": "2025-04-01" } },
+
+  { "applicationId": "app4", "controlAreaId": "ca1", "status": "critical", "details": { "coverage": 55, "complexity": "high" } },
+  { "applicationId": "app4", "controlAreaId": "ca2", "status": "healthy", "details": { "vulnerabilities": 1, "scaStatus": "pass" } },
+  { "applicationId": "app4", "controlAreaId": "ca3", "status": "healthy", "details": { "uptime": 99.98, "avgResponse": "100ms" } },
+  { "applicationId": "app4", "controlAreaId": "ca4", "status": "warning", "details": { "budgetVariance": "+10%" } },
+  { "applicationId": "app4", "controlAreaId": "ca5", "status": "critical", "details": { "lastUpdated": "2024-11-20" } },
+
+  { "applicationId": "app5", "controlAreaId": "ca1", "status": "healthy", "details": { "coverage": 98, "complexity": "low" } },
+  { "applicationId": "app5", "controlAreaId": "ca2", "status": "healthy", "details": { "vulnerabilities": 0, "scaStatus": "pass" } },
+  { "applicationId": "app5", "controlAreaId": "ca3", "status": "healthy", "details": { "uptime": 99.99, "avgResponse": "50ms" } },
+  { "applicationId": "app5", "controlAreaId": "ca4", "status": "healthy", "details": { "budgetVariance": "-2%" } },
+  { "applicationId": "app5", "controlAreaId": "ca5", "status": "healthy", "details": { "lastUpdated": "2025-04-18" } }
+]

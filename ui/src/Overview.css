@@ -1,0 +1,254 @@
+/* Fitness Functions Table Styling */
+.fitness-functions-table {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fitness-functions-table h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.fitness-functions-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fitness-functions-table th {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.fitness-functions-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  padding-right: 1.5rem;
+}
+
+.fitness-functions-table th.sortable:hover {
+  background: #e8e8e8;
+}
+
+.fitness-functions-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.fitness-functions-table tr:hover {
+  background: #f9f9f9;
+}
+
+.fitness-functions-table tr.good {
+  border-left: 4px solid #4caf50;
+}
+
+.fitness-functions-table tr.warning {
+  border-left: 4px solid #ff9800;
+}
+
+.fitness-functions-table tr.failing {
+  border-left: 4px solid #f44336;
+}
+
+/* Column-specific styling */
+.function-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.function-description {
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 400px;
+}
+
+/* Percentage bar */
+.percentage {
+  min-width: 120px;
+}
+
+.percentage-bar {
+  position: relative;
+  background: #f0f0f0;
+  height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.percentage-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.percentage-text {
+  position: relative;
+  display: block;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #333;
+  z-index: 1;
+}
+
+/* Count columns */
+.count {
+  text-align: center;
+  font-weight: 500;
+}
+
+.passing-count {
+  color: #2e7d32;
+}
+
+.warning-count {
+  color: #e65100;
+}
+
+.failing-count {
+  color: #c62828;
+}
+
+.total-count {
+  color: #555;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-good {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-warning {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status-failing {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Data Sets Table (existing fitness functions) */
+.fitness-functions-list {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fitness-functions-list h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.fitness-functions-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fitness-functions-list th {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.fitness-functions-list th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  padding-right: 1.5rem;
+}
+
+.fitness-functions-list th.sortable:hover {
+  background: #e8e8e8;
+}
+
+.fitness-functions-list td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.fitness-functions-list tr:hover {
+  background: #f9f9f9;
+}
+
+.fitness-functions-list tr.passing {
+  border-left: 4px solid #4caf50;
+}
+
+.fitness-functions-list tr.failing {
+  border-left: 4px solid #f44336;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-indicator.load-ok {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-indicator.demo-data {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-indicator.no-data {
+  background: #fafafa;
+  color: #757575;
+}
+
+.status-indicator.load-error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fitness-function-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .metric-breakdown {
+    justify-content: space-around;
+  }
+}

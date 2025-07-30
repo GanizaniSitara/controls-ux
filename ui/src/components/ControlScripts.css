@@ -1,0 +1,202 @@
+.control-scripts-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.scripts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.scripts-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.scripts-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  text-transform: uppercase;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3498db;
+}
+
+.scripts-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.script-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.script-item:last-child {
+  border-bottom: none;
+}
+
+.script-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.script-header:hover {
+  background-color: #f5f5f5;
+}
+
+.expand-icon {
+  font-size: 0.8em;
+  margin-right: 10px;
+  color: #666;
+  transition: transform 0.2s;
+}
+
+.script-name {
+  flex: 1;
+  font-weight: 600;
+  color: #2c3e50;
+  font-family: 'Courier New', monospace;
+}
+
+.step-count {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+.steps-list {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.step-item {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.step-name {
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95em;
+}
+
+.step-status-pass {
+  color: #27ae60;
+}
+
+.step-status-warning {
+  color: #f39c12;
+}
+
+.step-status-fail {
+  color: #e74c3c;
+}
+
+.step-status-normal {
+  color: #3498db;
+}
+
+.step-line {
+  color: #95a5a6;
+  font-size: 0.85em;
+}
+
+.step-description {
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.step-parameters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.params-label {
+  font-size: 0.85em;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.parameter {
+  background: #ecf0f1;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: 'Courier New', monospace;
+  color: #34495e;
+}
+
+.loading, .error, .no-scripts {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.no-scripts {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

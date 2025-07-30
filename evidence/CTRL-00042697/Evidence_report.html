@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Report - BEOWULF_EOD_CTRL-00042697</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .control-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .status-pass {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .status-fail {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .evidence-section {
+            margin: 30px 0;
+        }
+        .evidence-file {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        .timestamp {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evidence Report: BEOWULF End of Day Control</h1>
+        
+        <div class="control-info">
+            <p><strong>Control ID:</strong> BEOWULF_EOD_CTRL-00042697</p>
+            <p><strong>Status:</strong> <span class="status-pass">PASS</span></p>
+            <p><strong>Execution Time:</strong> <span class="timestamp">2025-01-25T14:30:00Z</span></p>
+            <p><strong>Duration:</strong> 2.4 seconds</p>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Control Description</h2>
+            <p>This control validates end-of-day processing for BEOWULF trading system, ensuring all trades are properly reconciled and risk calculations are accurate.</p>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Evidence Files</h2>
+            <div class="evidence-file">
+                <strong>trade_reconciliation.log</strong>
+                <p>All 1,247 trades reconciled successfully</p>
+            </div>
+            <div class="evidence-file">
+                <strong>risk_calculations.csv</strong>
+                <p>VaR calculations within acceptable limits: $2.3M (limit: $5M)</p>
+            </div>
+            <div class="evidence-file">
+                <strong>position_summary.json</strong>
+                <p>Net positions calculated and verified against source systems</p>
+            </div>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Key Metrics</h2>
+            <ul>
+                <li>Total Trades Processed: 1,247</li>
+                <li>Reconciliation Success Rate: 100%</li>
+                <li>Risk Limit Utilization: 46%</li>
+                <li>Processing Time: 2.4s</li>
+            </ul>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Compliance Notes</h2>
+            <p>All regulatory requirements met. No exceptions noted.</p>
+        </div>
+    </div>
+</body>
+</html>

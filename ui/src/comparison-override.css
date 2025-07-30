@@ -1,0 +1,43 @@
+/* Force single column layout for comparison view */
+.comparison-container {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  float: none !important;
+  position: relative !important;
+}
+
+.comparison-wrapper {
+  display: block !important;
+  width: 100% !important;
+}
+
+.comparison-header {
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 20px !important;
+  background-color: #f8f9fa !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.analysis-results {
+  display: block !important;
+  width: 100% !important;
+}
+
+.evidence-grid-container {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+/* Ensure no parent can override */
+.App-main > * {
+  float: none !important;
+  display: block !important;
+  width: 100% !important;
+}

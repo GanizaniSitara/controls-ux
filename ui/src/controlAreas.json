@@ -1,0 +1,13 @@
+[
+  { "id": "ca1", "name": "Code Quality", "description": "Evaluates code maintainability, test coverage, and adherence to standards." },
+  { "id": "ca2", "name": "Security", "description": "Assesses vulnerability scanning results, dependency security, and access controls." },
+  { "id": "ca3", "name": "Operational Excellence", "description": "Measures uptime, performance, monitoring, and incident response." },
+  { "id": "ca4", "name": "Cost Optimization", "description": "Tracks resource utilization and spending against budgets." },
+  { "id": "ca5", "name": "Documentation", "description": "Checks for up-to-date technical and user documentation." },
+  { "id": "ca6", "name": "Data Quality", "description": "Measures data accuracy, consistency, and completeness across systems." },
+  { "id": "ca7", "name": "System Resilience", "description": "Assesses failover capabilities, recovery times, and overall system robustness." },
+  { "id": "ca8", "name": "Technical Debt", "description": "Tracks accumulated technical debt, legacy code, and refactoring needs." },
+  { "id": "ca9", "name": "Vendor Management", "description": "Monitors vendor compliance, performance, and contractual obligations." },
+  { "id": "ca10", "name": "Architecture", "description": "Evaluates adherence to architectural standards and modernization efforts." },
+  { "id": "ca11", "name": "Workload Placement", "description": "Assesses cloud optimization, resource utilization, and cost efficiency." }
+]

@@ -1,0 +1,10 @@
+{
+  "bbeowulf_b_rl_ldn_eod_batch_bat_ldn6": {
+    "instance": "P16",
+    "status": "SUCCESS",
+    "last_start": "2025/07/22 11:08:30",
+    "last_end": "2025/07/22 11:23:30",
+    "definition": "<html>\\n <head>\\n  <link href=\\\"/ATS/htdocs/stylesheet/barcap.css\\\" rel=\\\"STYLESHEET\\\" type=\\\"text/css\\\">\\n",
+    "calendar_details": null
+  }
+}

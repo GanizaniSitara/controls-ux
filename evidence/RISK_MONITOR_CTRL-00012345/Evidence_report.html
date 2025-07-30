@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Report - RISK_MONITOR_CTRL-00012345</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 10px;
+        }
+        .control-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .status-pass {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .status-fail {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .status-warning {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        .evidence-section {
+            margin: 30px 0;
+        }
+        .evidence-file {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #e67e22;
+        }
+        .timestamp {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evidence Report: Risk Monitoring Control</h1>
+        
+        <div class="control-info">
+            <p><strong>Control ID:</strong> RISK_MONITOR_CTRL-00012345</p>
+            <p><strong>Status:</strong> <span class="status-warning">WARNING</span></p>
+            <p><strong>Execution Time:</strong> <span class="timestamp">2025-01-25T14:45:00Z</span></p>
+            <p><strong>Duration:</strong> 5.7 seconds</p>
+        </div>
+
+        <div class="alert">
+            <strong>⚠️ Warning:</strong> Risk limits approaching threshold levels in FX portfolio
+        </div>
+
+        <div class="evidence-section">
+            <h2>Control Description</h2>
+            <p>Real-time monitoring of market risk exposure across all trading portfolios with automated alerts for limit breaches.</p>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Evidence Files</h2>
+            <div class="evidence-file">
+                <strong>fx_portfolio_risk.json</strong>
+                <p>FX exposure at 87% of limit (threshold: 80%)</p>
+            </div>
+            <div class="evidence-file">
+                <strong>equity_portfolio_risk.json</strong>
+                <p>Equity exposure at 62% of limit - within normal range</p>
+            </div>
+            <div class="evidence-file">
+                <strong>credit_risk_summary.csv</strong>
+                <p>Credit exposure metrics calculated for 523 counterparties</p>
+            </div>
+            <div class="evidence-file">
+                <strong>risk_alerts.log</strong>
+                <p>3 alerts generated: 2 warnings, 1 informational</p>
+            </div>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Key Metrics</h2>
+            <ul>
+                <li>Total Portfolios Monitored: 12</li>
+                <li>Risk Limit Breaches: 0</li>
+                <li>Risk Limit Warnings: 2</li>
+                <li>VaR (99% confidence): $8.7M</li>
+                <li>Stress Test Scenarios Passed: 18/20</li>
+            </ul>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Compliance Notes</h2>
+            <p>All risk limits remain within regulatory requirements. FX portfolio requires attention due to approaching limits.</p>
+        </div>
+    </div>
+</body>
+</html>

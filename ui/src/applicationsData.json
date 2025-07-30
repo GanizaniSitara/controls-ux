@@ -1,0 +1,7 @@
+[
+  { "id": "app1", "name": "Customer Data Hub", "owner": "Sales & Marketing IT" },
+  { "id": "app2", "name": "Enterprise Resource Planning (ERP)", "owner": "Finance & Operations IT" },
+  { "id": "app3", "name": "Supply Chain Management Portal", "owner": "Logistics IT" },
+  { "id": "app4", "name": "Human Resources Information System (HRIS)", "owner": "HR IT" },
+  { "id": "app5", "name": "API Gateway", "owner": "Platform Engineering" }
+]

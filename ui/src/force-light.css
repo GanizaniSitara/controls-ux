@@ -1,0 +1,33 @@
+/* FORCE LIGHT THEME - OVERRIDE EVERYTHING */
+* {
+  --bg-primary: #ffffff !important;
+  --bg-secondary: #ffffff !important;
+  --bg-tertiary: #f8f9fa !important;
+  --bg-card: #ffffff !important;
+  --text-primary: #212529 !important;
+  --text-secondary: #495057 !important;
+  --text-muted: #6c757d !important;
+}
+
+html, body, #root, .App, .App-main {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}
+
+.App-nav {
+  background-color: #ffffff !important;
+}
+
+.App-footer {
+  background-color: #ffffff !important;
+}
+
+/* Force all divs to be transparent or white */
+div:not(.App-header) {
+  background-color: transparent !important;
+}
+
+.control-card {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}

@@ -1,0 +1,121 @@
+# Project-specific sensitive files
+CLAUDE.md
+*.png
+*screenshot*
+*GBRPWM*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+venv/
+ENV/
+env/
+.venv
+
+# Node/React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.npm
+.eslintcache
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+api_server.log
+ui_server.log
+frontend.log
+backend.log
+server.log
+
+# Environment and config
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+settings.ini
+api/settings.ini
+
+# Data files (keep structure but not data)
+api/data_mock/*.csv
+api/data_prod/*.csv
+api/data_input/*.csv
+!api/data_mock/.gitkeep
+!api/data_prod/.gitkeep
+!api/data_input/.gitkeep
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups and temp files
+*.bak
+*.backup*
+*.tmp
+*.temp
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Test coverage
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Migration files (may contain sensitive data)
+migrations/*.json
+api/migrations/*.json
+
+# Schema detection (may reveal internal structure)
+schemas/detected_schemas.json
+api/schemas/detected_schemas.json

@@ -1,0 +1,18 @@
+api==0.0.7
+APScheduler==3.11.0
+cachetools==5.5.2
+fastapi==0.115.12
+openpyxl==3.1.5
+pandas==2.2.3
+pyodbc==5.2.0
+Requests==2.32.3
+strawberry-graphql[cli]
+uvicorn==0.34.2
+
+# Testing dependencies
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.1
+pytest-mock==3.14.0
+faker==37.4.2

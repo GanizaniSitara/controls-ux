@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Report - TRADE_VALIDATION_CTRL-00055432</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .control-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .status-pass {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .status-fail {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .evidence-section {
+            margin: 30px 0;
+        }
+        .evidence-file {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        .timestamp {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .failed-trades {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evidence Report: Trade Validation Control</h1>
+        
+        <div class="control-info">
+            <p><strong>Control ID:</strong> TRADE_VALIDATION_CTRL-00055432</p>
+            <p><strong>Status:</strong> <span class="status-fail">FAIL</span></p>
+            <p><strong>Execution Time:</strong> <span class="timestamp">2025-01-25T15:15:00Z</span></p>
+            <p><strong>Duration:</strong> 8.9 seconds</p>
+        </div>
+
+        <div class="error">
+            <strong>❌ Error:</strong> 3 trades failed validation checks
+        </div>
+
+        <div class="evidence-section">
+            <h2>Control Description</h2>
+            <p>Real-time validation of trade details including counterparty verification, pricing checks, and settlement instruction validation.</p>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Evidence Files</h2>
+            <div class="evidence-file">
+                <strong>trade_validation_summary.json</strong>
+                <p>Total trades processed: 892 | Passed: 889 | Failed: 3</p>
+            </div>
+            <div class="evidence-file">
+                <strong>failed_trades.csv</strong>
+                <p>Details of 3 failed trades with validation errors</p>
+            </div>
+            <div class="evidence-file">
+                <strong>counterparty_checks.log</strong>
+                <p>2 trades failed due to unverified counterparty codes</p>
+            </div>
+            <div class="evidence-file">
+                <strong>pricing_validation.json</strong>
+                <p>1 trade failed due to price outside of market range</p>
+            </div>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Failed Trade Details</h2>
+            <div class="failed-trades">
+                <h3>Failed Trades Summary:</h3>
+                <ol>
+                    <li>
+                        <strong>Trade ID: TRD-2025-089234</strong><br>
+                        Error: Counterparty code 'XYZ123' not found in approved list<br>
+                        Amount: $2.5M USD
+                    </li>
+                    <li>
+                        <strong>Trade ID: TRD-2025-089267</strong><br>
+                        Error: Counterparty code 'ABC789' verification expired<br>
+                        Amount: $1.8M EUR
+                    </li>
+                    <li>
+                        <strong>Trade ID: TRD-2025-089291</strong><br>
+                        Error: Price deviation >5% from market mid (actual: 7.2%)<br>
+                        Amount: $5.0M GBP
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Key Metrics</h2>
+            <ul>
+                <li>Total Trades Validated: 892</li>
+                <li>Validation Success Rate: 99.66%</li>
+                <li>Failed Trades Value: $9.3M</li>
+                <li>Average Validation Time: 10ms</li>
+                <li>Validation Rules Applied: 15</li>
+            </ul>
+        </div>
+
+        <div class="evidence-section">
+            <h2>Compliance Notes</h2>
+            <p>Failed trades have been flagged for manual review. Operations team notified via JIRA tickets: OPS-2025-1234, OPS-2025-1235, OPS-2025-1236.</p>
+        </div>
+    </div>
+</body>
+</html>
