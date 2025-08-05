@@ -151,8 +151,7 @@
   padding: 80px 20px;
   background: #f8f9fa;
   border-radius: 8px;
-  margin: 40px auto;
-  max-width: 600px;
+  margin: 40px 0;
 }
 
 .empty-state h3 {
